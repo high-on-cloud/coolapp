@@ -1,0 +1,12 @@
+<div class="play-container">
+    <p> 
+        <strong>Search your Fav Brew </strong><input type="text" [(ngModel)]="keyword" (keyup)="onKey($event)">
+        
+    </p>
+</div>
+
+<ul *ngIf="brews">
+    <li #something *ngFor="let brew of brews">
+      <a href="#" [routerLink]="['/searchdetails', brew.name]"><p class="name">{{ brew.name }}</p></a>
+    </li>
+  </ul>
